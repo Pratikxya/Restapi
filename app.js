@@ -1,9 +1,12 @@
-import express from "express";
+import express from "express"; //imports the package express
 
-const app = express();
+const app = express(); //executes the express function
+
+//ROUTES
+app.get("/posts", (req, res) => res.send("Hello World!"));
+
+//lISTENS TO THE SERVER
 
 const port = process.env.port || 3000;
-
-app.get("/", (req, res) => res.send("Hello World!"));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
