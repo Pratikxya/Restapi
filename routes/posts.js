@@ -1,8 +1,9 @@
 import express from "express";
 
 const router = express.Router();
+const app = express();
 
 //ROUTES
-app.get("/posts", (req, res) => res.send("Hello World!"));
+router.get("/", (req, res) => res.send("Hello World!"));
 
 export default router;
