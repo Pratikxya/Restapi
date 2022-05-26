@@ -1,6 +1,7 @@
 import express from "express"; //imports the package express
 import mongoose from "mongoose";
 import "dotenv/config";
+import bodyParser from "body-parser";
 
 const app = express(); //executes the express function
 
@@ -8,11 +9,13 @@ const app = express(); //executes the express function
 import postsRoute from "./routes/posts.js";
 
 //ROUTES MIDDLEWARES
+app.use(bodyParser.json());
+
 app.use("/posts", postsRoute);
 
 //lISTENS TO THE SERVER
 
-const port = process.env.port || 3000;
+const port = process.env.port || 4000;
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
